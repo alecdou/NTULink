@@ -1,0 +1,213 @@
+/* swiper */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container-promotion {
+    height: 450px !important;
+    object-fit: contain;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.category-slider {
+    width: 150px !important;
+    height: 150px !important;
+    overflow: hidden;
+    margin: 1px !important;
+}
+
+#promotion-list {
+    background: white;
+}
+
+.promotion-slider {
+    width: 250px !important;
+    height: 420px !important;
+    object-fit: contain;
+    margin: 1px !important;
+}
+
+#promotion-card img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+/*.promotion-slide.card {*/
+/*    width: 350px !important;*/
+/*    height: 400px !important;*/
+/*    object-fit: contain;*/
+/*    margin: 1px !important;*/
+/*}*/
+
+
+#category-list {
+    background: white;
+}
+
+.category-slide img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#banner {
+    width: 100%;
+    min-width: 350px;
+    height: auto;
+}
+
+#banner img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ad-card {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    background-color: white;
+    border: none;
+}
+
+.ad-card img {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.product-card {
+    width: 100%;
+    height: 100% !important;
+    background-color: white;
+    border: none;
+
+}
+.product-img {
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 98%;
+    height: 98%;
+    object-fit: contain;
+}
+
+.login-card {
+    width: 400px !important;
+    height: 450px !important;
+    background-color: white;
+}
+.login-button {
+    width: 100%;
+}
+.signup-button {
+    width: 100%;
+}
+
+
+/* Offer Modal */
+/* Full-width input fields */
+
+
+
+
+/* Center the image and position the close button */
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding: 0px;
+}
+
+.modal-dialog {
+    width: 100% !important;
+    padding: 5px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    border: 0;
+    width: 100%; /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+
+
+/* Show Page */
+
+.delete-btn {
+    color: indianred !important;
+    background: indianred !important;
+    border: none;
+}
+
+.edit-btn {
+    color: darkseagreen !important;
+    background: darkseagreen !important;
+    border: none !important;
+}
