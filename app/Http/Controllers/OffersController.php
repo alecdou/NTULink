@@ -35,7 +35,9 @@ class OffersController extends Controller
         $offer->offered_price = $request->input('price');
         $offer->item_id = $request->input('item_id');
         $offer->buyer_id = auth()->user()->id;
-        $offer->date_offered = '2019-12-12 00:00:00';
+        // set the time zone
+        date_default_timezone_set("Asia/Singapore");
+        $offer->date_offered = date("Y-m-d h:i:s");
 
         if(auth()->user()->id == $request->input('user_id')) {
             if(count(Offer::where('buyer_id', auth()->user()->id)->where('item_id', $request->input('item_id'))->get()) == 0) {
