@@ -134,13 +134,13 @@
                                             </a>
                                         </li>
                                         <li class="nav-item mx-2 mx-lg-3">
-                                        @auth
-                                            <a class="nav-link" href="/profiles/{{ auth()->user()->id }}/edit">Edit Profile</a>
-                                        @endauth
+                                            @auth
+                                                <a class="nav-link" href="/profiles/{{ auth()->user()->id }}/edit">Edit Profile</a>
+                                            @endauth
                                         </li>
                                         <li class="nav-item mx-2 mx-lg-3">
                                             <a class="nav-link" href="/like">
-                                                My Likes
+                                                My Likes <i class="far fa-heart fa-1x p-0 m-0"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item mx-2 mx-lg-3">
@@ -158,25 +158,25 @@
                             <!-- Admin -->
                             @auth
                                 @if(App\User::where('id', auth()->user()->id)->first()->is_admin == true)
-                                <nav class="navbar my-0 py-0">
-                                    <a class="navbar-brand">Management</a>
-                                    <button data-toggle="collapse" data-target="#sidebar-admin" class="btn p-0 m-0 mb-1">
-                                        <i class="fas fa-sort-down fa-2x"></i>
-                                    </button>
+                                    <nav class="navbar my-0 py-0">
+                                        <a class="navbar-brand">Management</a>
+                                        <button data-toggle="collapse" data-target="#sidebar-admin" class="btn p-0 m-0 mb-1">
+                                            <i class="fas fa-sort-down fa-2x"></i>
+                                        </button>
 
-                                    <div class="collapse navbar-collapse" id="sidebar-admin">
-                                        <ul class="navbar-nav mr-auto">
+                                        <div class="collapse navbar-collapse" id="sidebar-admin">
+                                            <ul class="navbar-nav mr-auto">
 
-                                            <li class="nav-item mx-2 mx-lg-3">
-                                                <a class="nav-link" href="/admin/promotion">Promotions</a>
-                                            </li>
-                                            <li class="nav-item mx-2 mx-lg-3">
-                                                <a class="nav-link" href="#">Option2</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                            @endif
+                                                <li class="nav-item mx-2 mx-lg-3">
+                                                    <a class="nav-link" href="/admin/promotion">Promotions</a>
+                                                </li>
+                                                <li class="nav-item mx-2 mx-lg-3">
+                                                    <a class="nav-link" href="#">Option2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                @endif
                             @endauth
 
                         </div>
@@ -254,12 +254,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1 d-none d-md-inline">
                         <a class="nav-link" href="/like"><i class="far fa-heart fa-2x p-0 m-0"></i></a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="/chats"><i class="far fa-comment-dots fa-2x"></i></a>
                     </li>
                     <li class="nav-item mx-1">
                         <a class="nav-link" href="/items/create"><i class="fas fa-plus-square fa-2x"></i></a>
                     </li>
+
                 @endguest
             </ul>
         </div>
