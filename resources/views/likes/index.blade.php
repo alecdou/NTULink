@@ -11,12 +11,21 @@
                     <div class="container col-6 col-xl-2 col-md-3 col-sm-4 mb-3 px-1 m-0">
                         <div class="card product-card border-0 justify-content-center">
                             <a href="/items/{{ $item->id }}" class="d-flex justify-content-center my-0 pb-0">
-                                <img src="/{{ App\Image::where('item_id', $item->id)->first()->image_path }}" alt="Item Image" class="img-fluid">
+                                <img src="/{{ App\Image::where('item_id', $item->id)->first()->image_path }}" alt="Item Image" class="product-img">
                             </a>
-                            <div class="card-body justify-content-center mt-0 pt-0">
-                                <h5 class="card-title d-flex justify-content-center">{{ $item->name }}</h5>
-                                <h5 class="card-title d-flex justify-content-center">{{ $item->price }}</h5>
-                                <small class="card-text d-flex justify-content-center">{{ $item->description }}</small>
+                            <div class="card-body justify-content-center mt-1 pt-1">
+                                <h5 id="item-name" class="card-title text-truncate mb-0" style="display: block">
+                                    {{ $item->name }}
+                                </h5>
+                                <p class="card-text text-truncate mt-0 text-muted" style="display: block">{{ $item->description }}</p>
+                                <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0">
+                                    <h5 id="item-price" class="card-title d-flex justify-content-start mb-0">
+                                        <b>S${{ $item->price }}</b>
+                                    </h5>
+                                    <h5 class="text-muted pb-0 mb-0">Used</h5>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -31,5 +40,4 @@
             <h5 class="d-flex justify-content-center mt-3"><b>No items found</b></h5>
         </div>
     @endif
-
 @endsection
