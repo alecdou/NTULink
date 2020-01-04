@@ -3,6 +3,7 @@
 @section('content')
 
     <style>
+
         .chat-list {
             width: 100%;
             position: fixed;
@@ -31,7 +32,7 @@
         }
 
         .message-box {
-            height: calc(100% - 153px);
+            height: 100%;
             width: 100%;
             position: fixed;
             right: 0;
@@ -41,7 +42,7 @@
             overflow-x: hidden;
             overflow-y: scroll;
             padding-top: 15px;
-            padding-bottom: 15px;
+            padding-bottom: 200px;
         }
 
         .message-item {
@@ -54,6 +55,7 @@
             display: block;
             right: 0;
             min-width: 30%;
+            max-width: 80%;
         }
 
         .message-sender {
@@ -61,6 +63,7 @@
             display: block;
             left: 0;
             min-width: 30%;
+            max-width: 80%;
         }
 
         .chat-img {
@@ -74,7 +77,7 @@
             width: 100%;
             right: 0;
             position: fixed;
-            bottom:0;
+            bottom: 0;
             z-index: 10;
             background-color: #e4e7eb !important;
         }
@@ -104,7 +107,7 @@
     <div class="container container-fluid row mt-3 bg-light px-0 mx-0 col-12">
 
         <!-- chat List -->
-        <div class="container-fluid col-12 col-md-4 chat-list px-0 mx-0 pr-1">
+        <div class="container-fluid col-0 col-md-4 chat-list px-0 mx-0 pr-1">
             <div class="container-fluid px-0 mx-0 ml-3 pb-2 row col-12 px-0 mx-0 pr-1">
 
             @if(count($chats['chats']) > 0)
@@ -141,14 +144,12 @@
 
 
         <!-- Message Box -->
-
-
-        <div class="container-fluid d-none d-md-block col-8 message-box border-0">
+        <div class="container-fluid col-12 col-md-8 message-box border-0">
 
             <!-- Input Box -->
-            <div class="navbar navbar-expand chat-input-box bg-light col-8">
+            <div class="navbar navbar-expand chat-input-box bg-light col-12 col-md-8">
                 <div id="chat-input" class="navbar container-fluid py-0 px-1 m-0">
-                    <form method="POST" action="/messages/send" class="input-group">
+                    <form method="POST" action="/messages/send" class="input-group" style="z-index: 11">
                         @csrf
                         <input name="text" class="form-control rounded-left" type="text">
                         <input name="chat_id" type="hidden" value="{{ $chats['current_chat_id'] }}">
@@ -168,9 +169,8 @@
                 <div class="container-fluid col-12 row d-flex justify-content-between px-0 px-0">
 
                     <div class="container-fluid col-12 row align-items-center">
-                        <img class="container-fluid col-2 pl-0 chat-img" src="/noimage.jpg">
-
-                        <div class="container-fluid col-10 align-self-center d-block p-0 m-0">
+                        <img class="container-fluid col-3 px-2 chat-img" src="/noimage.jpg">
+                        <div class="container-fluid col-9 align-self-center d-block p-0 m-0">
                             <h5 class="container-fluid px-0 pt-2 text-truncate text-monospace font-weight-bold pull-left" style="display: block">
                                 {{ $chats['sender']->name }}
                             </h5>
@@ -189,7 +189,7 @@
 
                         @if(auth()->user()->id == $message->sender_id)
                             <!-- Sender -->
-                            <div class="container-fluid col-12 px-0 d-block">
+                            <div class="container-fluid col-12 px-0 d-block my-1">
                                 <div class="pull-right card border-0 message-item message-sender px-0">
                                     <div class="card-body py-1 px-2 my-1">
                                         <p class="small py-0 my-0">
@@ -204,7 +204,7 @@
                             <!-- /Sender -->
                         @else
                             <!-- Receiver -->
-                            <div class="container-fluid col-12 px-0 d-block">
+                            <div class="container-fluid col-12 px-0 d-block my-1">
                                 <div class="pull-left card border-0 message-item message-receiver px-0">
                                     <div class="card-body py-1 px-2 my-1">
                                         <p class="small py-0 my-0">

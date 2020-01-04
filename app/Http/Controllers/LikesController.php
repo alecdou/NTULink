@@ -49,7 +49,7 @@ class LikesController extends Controller
         $like->user_id = auth()->user()->id;
         $like->item_id = $item_id;
         $like->save();
-        return redirect('/items/' . $request->input('item_id'));
+        return redirect('/items/' . $request->input('item_id'))->with('success', 'You liked this item');
     }
 
     /**
@@ -67,6 +67,6 @@ class LikesController extends Controller
             ->where('user_id', $user_id)
             ->where('item_id', $item_id)
             ->delete();
-        return redirect('/items/' . $request->input('item_id'));
+        return redirect('/items/' . $request->input('item_id'))->with('success', 'You removed this item from your likes');
     }
 }

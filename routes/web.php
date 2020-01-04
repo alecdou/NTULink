@@ -67,4 +67,6 @@ Route::get('/chats/{id}', 'ChatsController@show');
 Route::post('chats/create', 'ChatsController@create');
 
 Route::post('/messages/send', 'MessagesController@send');
-
+Route::get('/test', function () {
+    return view('/test');
+});

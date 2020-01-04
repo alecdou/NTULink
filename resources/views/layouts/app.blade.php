@@ -34,6 +34,21 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
 
+    <style>
+
+        html, body {
+
+            /* Allows content to fill the viewport and go beyond the bottom */
+            height: 100% !important;
+
+            /* Allows you to scroll below the viewport; default value is visible */
+            overflow-y: scroll !important;
+
+            /* To smooth any scrolling behavior */
+            -webkit-overflow-scrolling: touch !important;
+        }
+    </style>
+
 </head>
 <body>
     @include('inc.header')
