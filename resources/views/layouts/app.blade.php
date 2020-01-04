@@ -36,16 +36,18 @@
 
     <style>
 
-        html, body {
+        body {
+            font-size: 16px;
+        }
+        input[type="text"] {
+            font-size: inherit;
+        }
 
-            /* Allows content to fill the viewport and go beyond the bottom */
-            height: 100% !important;
-
-            /* Allows you to scroll below the viewport; default value is visible */
-            overflow-y: scroll !important;
-
-            /* To smooth any scrolling behavior */
-            -webkit-overflow-scrolling: touch !important;
+        h1 {
+            font-family: "Andale Mono";
+            font-weight: bold;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.73);
         }
     </style>
 

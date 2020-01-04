@@ -1,7 +1,12 @@
 <!-- home page -->
 @extends('layouts.app')
-
 @section('content')
+    <style>
+        .card a {
+            color: #272c31;
+            text-decoration: none !important;
+        }
+    </style>
     <!-- Banner -->
     <div id="banner" class="container-fluid mx-0 px-0">
         <div class="swiper-container swiper-container-banner">
@@ -61,35 +66,35 @@
             <div class="swiper-wrapper mx-2">
                 <div class="swiper-slide category-slider">
                     <div class="card border-0">
-                        <div class="card-body mt-3 mb-0 p-0"><i class="fas fa-shopping-bag fa-4x"></i></div>
-                        <div class="card-title mt-0 p-0">ALl Items</div>
+                        <a class="card-body mt-3 mb-0 p-0" href="/list/All Items"><i class="fas fa-shopping-bag fa-4x"></i></a>
+                        <div class="card-title mt-0 p-0">All Items</div>
                     </div>
                 </div>
 
                 <div class="swiper-slide category-slider">
                     <div class="card border-0">
-                        <div class="card-body mt-3 mb-0 p-0"><i class="fas fa-tshirt fa-4x"></i></div>
+                        <a class="card-body mt-3 mb-0 p-0" href="/list/Fashion"><i class="fas fa-tshirt fa-4x"></i></a>
                         <div class="card-title mt-0 p-0">Fashion</div>
                     </div>
                 </div>
 
                 <div class="swiper-slide category-slider">
                     <div class="card border-0">
-                        <div class="card-body mt-3 mb-0 p-0"><i class="fas fa-couch fa-4x"></i></div>
+                        <a class="card-body mt-3 mb-0 p-0" href="/list/Dorm & Living"><i class="fas fa-couch fa-4x"></i></a>
                         <div class="card-title mt-0 p-0">Dorm & Living</div>
                     </div>
                 </div>
 
                 <div class="swiper-slide category-slider">
                     <div class="card border-0">
-                        <div class="card-body mt-3 mb-0 p-0"><i class="fas fa-headphones fa-4x"></i></div>
+                        <a class="card-body mt-3 mb-0 p-0" href="/list/Electronics"><i class="fas fa-headphones fa-4x"></i></a>
                         <div class="card-title mt-0 p-0">Electronics</div>
                     </div>
                 </div>
 
                 <div class="swiper-slide category-slider">
                     <div class="card border-0">
-                        <div class="card-body mt-3 mb-0 p-0"><i class="fas fa-book fa-4x"></i></div>
+                        <a class="card-body mt-3 mb-0 p-0" href="/list/Books"><i class="fas fa-book fa-4x"></i></a>
                         <div class="card-title mt-0 p-0">Books</div>
                     </div>
                 </div>
