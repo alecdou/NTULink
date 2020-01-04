@@ -9,10 +9,31 @@
         color: white;
     }
 
+    .nav-like-btn:hover {
+        background-color: transparent !important;
+        color: orangered !important;
+    }
+
     .nav-like-active-btn {
         background-color: transparent !important;
-        color: lightpink !important;
+        color: orangered !important;
     }
+
+    .nav-like-active-btn:hover {
+        background-color: transparent !important;
+        color: white !important;
+    }
+
+    .nav-chat-btn {
+        background-color: transparent !important;
+        color: white;
+    }
+
+    .nav-chat-btn:hover {
+        background-color: transparent !important;
+        color: darkblue !important;
+    }
+
 
 
 </style>
@@ -55,9 +76,11 @@
 
                 <li class="py-0 my-0 nav-item ml-1">
                     <!-- Chat button -->
-                    <a class="nav-link text-monospace text-dark py-0" href="/chat/item-id={{ $data['item']->id }}">
-                        <h5 class="py-0 my-0" style="color: white"><b>Chat</b></h5>
-                    </a>
+                    <form action="/chats/create" method="post" class="container d-inline p-0 m-0">
+                        @csrf
+                        <input name="item_id" type="hidden" value="{{ $data['item']->id }}">
+                        <button type="submit" class="btn nav-chat-btn py-0 my-0" style="color: white"><i class="far fa-comment-dots fa-2x py-0"></i></button>
+                    </form>
                 </li>
 
                 <!-- Offer Modal -->

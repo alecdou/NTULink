@@ -52,8 +52,19 @@ Route::get('/admin/promotion', 'PromotionsController@index');
 Route::post('/admin/promotion/add', 'PromotionsController@add');
 Route::post('/admin/promotion/remove', 'PromotionsController@remove');
 
-Route::get('/chat', function() {
+
+//Route::get('chats/', function () {
+//    return view('chats/index');
+//});
+
+//Route::get('chats/1', function () {
+//    return view('chats/show');
+//});
 
 
-    return view('profiles/chat');
-});
+Route::get('/chats', 'ChatsController@index');
+Route::get('/chats/{id}', 'ChatsController@show');
+Route::post('chats/create', 'ChatsController@create');
+
+Route::post('/messages/send', 'MessagesController@send');
+

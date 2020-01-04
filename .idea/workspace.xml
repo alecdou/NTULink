@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80afb1e5-1714-4755-b6db-51c5441c5316" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/chats/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/items/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/items/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/chat.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,19 +153,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/profiles" />
-      <recent name="$PROJECT_DIR$/resources/views/items" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources/views/likes" />
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$/public/logos" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/chat" />
+      <recent name="$PROJECT_DIR$/resources/views/profiles" />
+      <recent name="$PROJECT_DIR$/resources/views/items" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/resources/views/likes" />
     </key>
   </component>
   <component name="RunManager">
@@ -203,7 +205,7 @@
       <workItem from="1577909547237" duration="12152000" />
       <workItem from="1577921945152" duration="1632000" />
       <workItem from="1577941034549" duration="82593000" />
-      <workItem from="1578121920603" duration="3550000" />
+      <workItem from="1578121920603" duration="23123000" />
     </task>
     <servers />
   </component>
@@ -233,19 +235,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1577516830535" />
-    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578075403704">
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578141368673">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1112.66.1112.834/0.0.1440.900@0.0.1440.900" timestamp="1577676141346" />
-    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578075403704" />
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578141368673" />
     <state x="363" y="114" key="#phpunit.xml" timestamp="1578081740733">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="363" y="114" key="#phpunit.xml/0.0.1440.900@0.0.1440.900" timestamp="1578081740733" />
-    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1577916983139">
+    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1578135875623">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1577916983139" />
+    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1578135875623" />
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578121922784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -255,5 +257,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/-1112.66.1112.834/0.0.1440.900@0.0.1440.900" timestamp="1577649881289" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -161,9 +161,13 @@
                                 <!-- /Offer Modal -->
 
                                 <!-- Chat button -->
-                                <a href="/chat/item-id={{ $data['item']->id }}" class="container d-inline p-0 m-0">
-                                    <div class="btn chat-btn btn-block px-md-5 my-1 text-monospace font-weight-bold border-dark">Chat</div>
-                                </a>
+
+                                    <form action="/chats/create" method="post" class="container d-inline p-0 m-0">
+                                        @csrf
+                                        <input name="item_id" type="hidden" value="{{ $data['item']->id }}">
+                                        <button type="submit" class="btn like-btn-active btn-block px-md-5 my-1 text-monospace font-weight-bold border-dark">Chat</button>
+                                    </form>
+
 
                                 <!-- Like Button -->
                                 @if(count(\App\Like::where('user_id', auth()->user()->id)->where('item_id', [$data['item']->id])->get()) == 0)
