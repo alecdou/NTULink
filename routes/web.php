@@ -52,8 +52,8 @@ Route::get('/admin/promotion', 'PromotionsController@index');
 Route::post('/admin/promotion/add', 'PromotionsController@add');
 Route::post('/admin/promotion/remove', 'PromotionsController@remove');
 
-Route::get('/sidebar', function() {
+Route::get('/chat', function() {
 
 
-    return view('sidebar');
+    return view('profiles/chat');
 });

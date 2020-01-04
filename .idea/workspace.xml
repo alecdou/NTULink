@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80afb1e5-1714-4755-b6db-51c5441c5316" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1VZZ21mWQpEqxph6I3vfDyBFgrv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -149,11 +152,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/profiles" />
       <recent name="$PROJECT_DIR$/resources/views/items" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/likes" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/views/profiles" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/js" />
@@ -199,7 +202,8 @@
       <workItem from="1577692401252" duration="27706000" />
       <workItem from="1577909547237" duration="12152000" />
       <workItem from="1577921945152" duration="1632000" />
-      <workItem from="1577941034549" duration="74975000" />
+      <workItem from="1577941034549" duration="82593000" />
+      <workItem from="1578121920603" duration="3550000" />
     </task>
     <servers />
   </component>
@@ -234,15 +238,19 @@
     </state>
     <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1112.66.1112.834/0.0.1440.900@0.0.1440.900" timestamp="1577676141346" />
     <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578075403704" />
+    <state x="363" y="114" key="#phpunit.xml" timestamp="1578081740733">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="363" y="114" key="#phpunit.xml/0.0.1440.900@0.0.1440.900" timestamp="1578081740733" />
     <state x="538" y="384" key="NewPhpFileDialog" timestamp="1577916983139">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1577916983139" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1577941035106">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578121922784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog/-1112.66.1112.834/0.0.1440.900@0.0.1440.900" timestamp="1577625533236" />
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577941035106" />
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578121922784" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1577649881289">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -16,15 +16,12 @@
                                 <h5 id="item-name" class="card-title text-truncate mb-0" style="display: block">
                                     {{ $item->name }}
                                 </h5>
-                                <p class="card-text text-truncate mt-0 text-muted" style="display: block">{{ $item->description }}</p>
                                 <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0">
-                                    <h5 id="item-price" class="card-title d-flex justify-content-start mb-0">
-                                        <b>S${{ $item->price }}</b>
-                                    </h5>
-                                    <h5 class="text-muted pb-0 mb-0">Used</h5>
+                                    <p id="item-price" class="card-title d-flex justify-content-start mb-0">
+                                        You offered S${{ $item->offered_price }}
+                                    </p>
+                                    <p class="text-muted pb-0 mb-0">Pending</p>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

@@ -9,11 +9,13 @@
         }
     </style>
 
+    @auth
     <!-- Info - on the top of the page -->
     <div id="id-bar" class="jumbotron jumbotron-fluid py-3">
         <div id="profile-picture" class="d-flex justify-content-center">
             <i class="fas fa-user-circle fa-5x d-flex justify-content-center"></i>
         </div>
+
 
         <h3 class="d-flex justify-content-center">{{ \App\User::find(auth()->user()->id)->name }}</h3>
 
@@ -56,4 +58,5 @@
 
 
     </div>
+    @endauth
 @endsection
