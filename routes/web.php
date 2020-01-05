@@ -71,6 +71,4 @@ Route::get('/test', function () {
     return view('/test');
 });
 
-Route::get('offers/1', function () {
-    return view('/offers/show');
-});
+Route::get('offers/{id}', 'OffersController@show');

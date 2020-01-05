@@ -9,9 +9,20 @@ use App\Offer;
 use DB;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\ChatsController;
+use App\Item;
 
 class OffersController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -50,8 +61,8 @@ class OffersController extends Controller
             if(count(Offer::where('buyer_id', auth()->user()->id)->where('item_id', $request->input('item_id'))->get()) == 0) {
                 $offer->save();
 
+                // generate a system message to inform the seller
                 $chat_id = ChatsController::auto_create($offer->seller_id);
-
                 $info = [
                     'sender_id' => $offer->seller_id,
                     'chat_id' => $chat_id,
@@ -68,6 +79,19 @@ class OffersController extends Controller
             return redirect('/items/'.$request->input('item_id'))->with('error', 'Offer Not Made');
         }
 
+    }
+
+
+    public function show($id) {
+        $offer = Offer::where('id', $id)->first();
+        $item = Item::where('id', $offer->item_id)->first();
+
+        $data = [
+            'offer' => $offer,
+            'item' => $item
+        ];
+
+        return view('/offers/show')->with('data', $data);
     }
 
 }

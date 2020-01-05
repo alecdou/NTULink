@@ -9,8 +9,8 @@
                 @foreach($items as $item)
                     <div class="container col-6 col-xl-2 col-md-3 col-sm-4 mb-3 px-1 m-0">
                         <div class="card product-card border-0 justify-content-center">
-                            <a href="/offers/1" class="d-flex justify-content-center my-0 pb-0">
-                                <img src="/{{ App\Image::where('item_id', $item->id)->first()->image_path }}" alt="Item Image" class="product-img">
+                            <a href='/offers/{{ $item->id }}' class="d-flex justify-content-center my-0 pb-0">
+                                <img src="/{{ App\Image::where('item_id', $item->item_id)->first()->image_path }}" alt="Item Image" class="product-img">
                             </a>
                             <div class="card-body justify-content-center mt-1 pt-1">
                                 <h5 id="item-name" class="card-title text-truncate mb-0" style="display: block">

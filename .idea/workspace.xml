@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="80afb1e5-1714-4755-b6db-51c5441c5316" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/items/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/offers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -204,7 +205,7 @@
       <workItem from="1577909547237" duration="12152000" />
       <workItem from="1577921945152" duration="1632000" />
       <workItem from="1577941034549" duration="82593000" />
-      <workItem from="1578121920603" duration="44095000" />
+      <workItem from="1578121920603" duration="47381000" />
     </task>
     <servers />
   </component>

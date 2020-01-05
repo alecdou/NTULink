@@ -58,8 +58,10 @@ class ProfilesController extends Controller
             ->join('items', 'items.id', '=', 'offers.item_id')
             ->where('offers.buyer_id', $user_id)
             ->orWhere('offers.seller_id', $user_id)
-            ->select('*')
+            ->select('*', 'offers.id')
             ->get();
+
+
 
         return view('/profiles/offer')->with('items', $items);
     }
