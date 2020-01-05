@@ -5,12 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chats/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chats/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/chats/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chats/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/items/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/review.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +209,7 @@
       <workItem from="1577909547237" duration="12152000" />
       <workItem from="1577921945152" duration="1632000" />
       <workItem from="1577941034549" duration="82593000" />
-      <workItem from="1578121920603" duration="54756000" />
+      <workItem from="1578121920603" duration="67717000" />
     </task>
     <servers />
   </component>
@@ -248,10 +248,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="363" y="114" key="#phpunit.xml/0.0.1440.900@0.0.1440.900" timestamp="1578081740733" />
-    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1578213282068">
+    <state x="538" y="384" key="NewPhpFileDialog" timestamp="1578234955174">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1578213282068" />
+    <state x="538" y="384" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1578234955174" />
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1578121922784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

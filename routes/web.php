@@ -72,7 +72,11 @@ Route::get('/test', function () {
 });
 
 
-Route::get('offers/{id}', 'OffersController@show');
-Route::get('offers/{id}/cancel', 'OffersController@cancel');
-Route::get('offers/{id}/decline', 'OffersController@decline');
-Route::get('offers/{id}/accept', 'OffersController@accept');
+Route::get('/offers/{id}', 'OffersController@show');
+Route::get('/offers/{id}/cancel', 'OffersController@cancel');
+Route::get('/offers/{id}/decline', 'OffersController@decline');
+Route::get('/offers/{id}/accept', 'OffersController@accept');
+
+Route::get('/reviews/create/{offer_id}', 'ReviewsController@create');
+Route::post('/reviews/store', 'ReviewsController@store');
+

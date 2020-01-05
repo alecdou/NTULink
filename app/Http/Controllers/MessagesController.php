@@ -42,7 +42,6 @@ class MessagesController extends Controller
         // update table chats last_text and last_activity
         $chat = Chat::where('id', $chat_id)->first();
         $chat->last_text = $text;
-        // $chat->last_activity = $message->time;
         $chat->save();
 
         return redirect('/chats/'.$chat_id);
@@ -61,7 +60,7 @@ class MessagesController extends Controller
         $message->sender_id = auth()->user()->id;
         $item_id = $info['item_id'];
         $item = Item::where('id', $item_id)->first();
-        $text = 'Offered '.'<b class="text-dark text-monospace">SG'.$info['offer']->offered_price.'</b>'.' for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
+        $text = 'Offered '.'<b class="text-dark text-monospace">S$'.$info['offer']->offered_price.'</b>'.' for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
         $text = $text . '<br>' . '<a class="text-muted  text-dark" href="/offers/'. $info['offer']->id .'">Check the offer</a>';
         $message->text = $text;
         $message->is_system = true;

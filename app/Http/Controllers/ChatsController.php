@@ -54,7 +54,7 @@ class ChatsController extends Controller
             ->get();
         $messages = DB::table('messages')
             ->where('chat_id', $id)
-            ->oldest('time')
+            ->oldest('created_at')
             ->get();
 
         $chat = DB::table('chats')->where('id', $id)->first();

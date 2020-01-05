@@ -60,9 +60,6 @@ class ProfilesController extends Controller
             ->orWhere('offers.seller_id', $user_id)
             ->select('*', 'offers.id')
             ->get();
-
-
-
         return view('/profiles/offer')->with('items', $items);
     }
 
@@ -75,11 +72,13 @@ class ProfilesController extends Controller
         $user_id = auth()->user()->id;
 
 
-        $items = DB::table('comments')
+        $reviews = DB::table('reviews')
             ->where('receiver_id', $user_id)
-            ->select('*')
+            ->latest('created_at')
             ->get();
-        return view('/profiles/review')->with('items', $items);
+
+        //print_r($reviews);
+        return view('/profiles/review')->with('reviews', $reviews);
     }
 
     /**

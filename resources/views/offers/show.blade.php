@@ -36,6 +36,7 @@
         <!-- /Title -->
 
 
+        <!-- Information -->
         <div class="container-fluid row px-0 mx-0">
 
 
@@ -87,7 +88,7 @@
                         <a class="btn decline-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/offers/{{ $data['offer']->id }}/decline">Decline</a>
                     @elseif($data['offer']->status == 'accepted')
                         <a class="btn chat-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/chats/{{ \App\Http\Controllers\ChatsController::find($data['offer']->buyer_id, $data['offer']->seller_id) }}">Chat</a>
-                        <div class="btn review-btn text-monospace font-weight-bold m-1 btn-block py-2">Comment</div>
+                        <a class="btn review-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/reviews/create/{{ $data['offer']->id }}">Comment</a>
                     @elseif(($data['offer']->status == 'declined') || ($data['offer']->status == 'canceled'))
                         <a class="btn chat-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/chats/{{ \App\Http\Controllers\ChatsController::find($data['offer']->buyer_id, $data['offer']->seller_id) }}">Chat</a>
                     @endif
@@ -142,16 +143,17 @@
                         <a class="btn decline-btn text-monospace font-weight-bold m-1 btn-block py-2"  href="/offers/{{ $data['offer']->id }}/cancel">Cancel</a>
                     @elseif($data['offer']->status == 'accepted')
                         <a class="btn chat-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/chats/{{ \App\Http\Controllers\ChatsController::find($data['offer']->buyer_id, $data['offer']->seller_id) }}">Chat</a>
-                        <div class="btn review-btn text-monospace font-weight-bold m-1 btn-block py-2">Comment</div>
+                        <a class="btn review-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/reviews/create/{{ $data['offer']->id }}">Comment</a>
                     @elseif(($data['offer']->status == 'declined') || ($data['offer']->status == 'canceled'))
                         <a class="btn chat-btn text-monospace font-weight-bold m-1 btn-block py-2" href="/chats/{{ \App\Http\Controllers\ChatsController::find($data['offer']->buyer_id, $data['offer']->seller_id) }}">Chat</a>
-
                     @endif
                 </div>
                 <!-- Buttons for sellers -->
-
             @endif
         </div>
+        <!-- /Information -->
+
+
 
 
 

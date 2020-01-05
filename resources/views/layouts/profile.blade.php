@@ -26,7 +26,7 @@
                     <div class="d-flex justify-content-center"><small>You haven't received any comments</small></div>
                 </h5>
             @else
-                <a class="d-flex justify-content-center nav-link p-0 m-0" href="#">
+                <div class="d-flex justify-content-center nav-link p-0 m-0" href="#">
                     <h5 class="d-block p-0 m-0 mt-2">
                         <div class="d-flex justify-content-center">
                             <b>{{ \App\User::find(auth()->user()->id)->rating }}</b>
@@ -37,7 +37,7 @@
                             @endfor
                         </div>
                     </h5>
-                </a>
+                </div>
             @endif
         </div>
     </div>

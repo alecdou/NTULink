@@ -193,7 +193,7 @@
                                 <div class="pull-right card border-0 message-item message-sender px-0">
                                     <div class="card-body py-1 px-2 my-1">
                                         <p class="small py-0 my-0">
-                                            {{ $message->time }}
+                                            {{ $message->created_at }}
                                         </p>
                                         <p class="py-0 my-0">
                                             @if($message->is_system)
@@ -212,7 +212,7 @@
                                 <div class="pull-left card border-0 message-item message-receiver px-0">
                                     <div class="card-body py-1 px-2 my-1">
                                         <p class="small py-0 my-0">
-                                            {{ $message->time }}
+                                            {{ $message->created_at }}
                                         </p>
                                         <p class="py-0 my-0">
                                             @if($message->is_system)
