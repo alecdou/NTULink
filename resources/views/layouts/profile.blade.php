@@ -54,9 +54,7 @@
         </nav>
 
         <!-- Contents -->
-        @yield('inner-content')
-
-
     </div>
+    @yield('inner-content')
     @endauth
 @endsection

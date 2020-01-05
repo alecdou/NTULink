@@ -28,20 +28,17 @@
             color: white !important;
             background: lightcoral !important;
             border: none !important;
-
         }
 
         .chat-btn {
             color: black !important;
             background: white !important;
-
             text-align: center;
         }
 
         .like-btn-active {
             color: black !important;
             background: white !important;
-
         }
 
         .like-btn {

@@ -70,3 +70,7 @@ Route::post('/messages/send', 'MessagesController@send');
 Route::get('/test', function () {
     return view('/test');
 });
+
+Route::get('offers/1', function () {
+    return view('/offers/show');
+});
