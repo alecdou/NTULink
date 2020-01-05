@@ -16,12 +16,24 @@
                                 <h5 id="item-name" class="card-title text-truncate mb-0" style="display: block">
                                     {{ $item->name }}
                                 </h5>
-                                <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0">
-                                    <p id="item-price" class="card-title d-flex justify-content-start mb-0">
-                                        You offered S${{ $item->offered_price }}
+                                @if(auth()->user()->id == $item->buyer_id)
+                                    <p class="card-text text-truncate mt-0 text-muted" style="display: block">
+                                        From {{ \App\User::where('id', $item->seller_id)->first()->name }}
                                     </p>
-                                    <p class="text-muted pb-0 mb-0">Pending</p>
-                                </div>
+                                    <h5 id="item-price" class="card-title d-flex justify-content-start mb-0 mt-2 text-truncate text-muted", style="display: block">
+                                        You offered S${{ $item->offered_price }}
+                                    </h5>
+                                @else
+                                    <p class="card-text text-truncate mt-0 text-muted" style="display: block">
+                                        Requested by {{ \App\User::where('id', $item->buyer_id)->first()->name }}
+                                    </p>
+                                    <h5 id="item-price" class="card-title d-flex justify-content-start mb-0 mt-2 text-truncate text-muted", style="display: block">
+                                        Offered you S${{ $item->offered_price }}
+                                    </h5>
+                                @endif
+                                <p class="text-muted p-0 m-0">
+                                    {{ $item->status }}
+                                </p>
                             </div>
                         </div>
                     </div>

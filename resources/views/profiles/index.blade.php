@@ -17,11 +17,22 @@
                                     {{ $item->name }}
                                 </h5>
                                 <p class="card-text text-truncate mt-0 text-muted" style="display: block">{{ $item->description }}</p>
-                                <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0">
+                                <h5 class="text-muted pb-0 mb-0">
+                                    @if($item->is_new)
+                                        New
+                                    @else
+                                        Used
+                                    @endif
+                                </h5>
+                                <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0 align-items-center">
                                     <h5 id="item-price" class="card-title d-flex justify-content-start mb-0">
                                         <b>S${{ $item->price }}</b>
                                     </h5>
-                                    <h5 class="text-muted pb-0 mb-0">Used</h5>
+
+                                    <div class="d-flex align-items-center pl-0 ml-0">
+                                        <i class="far fa-heart fa-2x py-1"></i>
+                                        {{ count(\App\Like::where('item_id', $item->id)->get()) }}
+                                    </div>
                                 </div>
 
 

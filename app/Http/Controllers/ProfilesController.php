@@ -57,6 +57,7 @@ class ProfilesController extends Controller
         $items = DB::table('offers')
             ->join('items', 'items.id', '=', 'offers.item_id')
             ->where('offers.buyer_id', $user_id)
+            ->orWhere('offers.seller_id', $user_id)
             ->select('*')
             ->get();
 

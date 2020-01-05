@@ -122,4 +122,37 @@ class ChatsController extends Controller
         }
     }
 
+    /**
+     * Create a chat between two users by the system.
+     *
+     * @param  int $seller_id
+     * @return int
+     */
+    public static function auto_create($seller_id) {
+        $user_id = auth()->user()->id;
+        $sender_id = $seller_id;
+
+        $current_chat = DB::table('chats')
+            ->where([
+                ['user1_id', $user_id],
+                ['user2_id', $sender_id]
+            ])
+            ->orWhere([
+                ['user2_id', $user_id],
+                ['user1_id', $sender_id]
+            ])
+            ->get();
+
+        if (count($current_chat) == 0) {
+            $chat = new Chat;
+            $chat->user1_id = $user_id;
+            $chat->user2_id = $sender_id;
+            $chat->last_text = 'Start your conversation with ' . User::where('id', $sender_id)->first()->name;
+            $chat->save();
+            return $chat->chat_id;
+        } else {
+            return $current_chat->first()->chat_id;
+        }
+    }
+
 }

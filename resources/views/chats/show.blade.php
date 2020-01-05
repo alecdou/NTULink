@@ -196,7 +196,11 @@
                                             {{ $message->time }}
                                         </p>
                                         <p class="py-0 my-0">
-                                            {{ $message->text }}
+                                            @if($message->is_system)
+                                                {!! html_entity_decode($message->text) !!}
+                                            @else
+                                                {{ $message->text }}
+                                            @endif
                                         </p>
                                     </div>
                                 </div>
