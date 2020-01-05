@@ -63,7 +63,7 @@
 
                 <!-- Offer Button -->
                 <li class="py-0 my-0 nav-item mx-3">
-                    @if(count(\App\Offer::where('buyer_id', auth()->user()->id)->where('item_id', [$data['item']->id])->get()) == 0)
+                    @if(count(\App\Offer::where('buyer_id', auth()->user()->id)->where('item_id', [$data['item']->id])->where('status', 'pending')->get()) == 0)
                         <a class="nav-link btn text-monospace py-0 my-0" onclick="document.getElementById('sm-offer-modal').style.display='block'">
                             <h5 class="py-0 my-0" style="color: darkblue"><b>Make Offer</b></h5>
                         </a>
@@ -108,7 +108,7 @@
                                     <label for="message" class="col-form-label text-md-right">Message</label>
                                     <textarea type="text" class="form-control border rounded mb-2"
                                               placeholder="Leaving a message for the seller ..." name="message" rows="3"></textarea>
-                                    <button for="offer-form" type="submit" class="btn btn-success checkout-btn container-fluid">Make Offer</button>
+                                    <button for="offer-form" type="submit" class="btn btn-success checkout-btn container-fluid justify-content-center">Make Offer</button>
                                 </div>
                             </div>
                         </form>

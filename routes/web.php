@@ -71,4 +71,8 @@ Route::get('/test', function () {
     return view('/test');
 });
 
+
 Route::get('offers/{id}', 'OffersController@show');
+Route::get('offers/{id}/cancel', 'OffersController@cancel');
+Route::get('offers/{id}/decline', 'OffersController@decline');
+Route::get('offers/{id}/accept', 'OffersController@accept');

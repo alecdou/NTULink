@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\ChatsController;
+
 use App\Message;
 use Illuminate\Http\Request;
 use App\Offer;
 use DB;
 use Illuminate\Validation\ValidationException;
-use App\Http\Controllers\ChatsController;
 use App\Item;
 
 class OffersController extends Controller
@@ -53,12 +54,10 @@ class OffersController extends Controller
         $offer->item_id = $request->input('item_id');
         $offer->buyer_id = auth()->user()->id;
         // set the time zone
-        date_default_timezone_set("Asia/Singapore");
-        $offer->date_offered = date("Y-m-d h:i:s");
         $offer->message = $request->input('message');
 
         if(auth()->user()->id == $request->input('user_id')) {
-            if(count(Offer::where('buyer_id', auth()->user()->id)->where('item_id', $request->input('item_id'))->get()) == 0) {
+            if(count(Offer::where('buyer_id', auth()->user()->id)->where('item_id', $request->input('item_id'))->where('status', 'pending')->get()) == 0) {
                 $offer->save();
 
                 // generate a system message to inform the seller
@@ -73,7 +72,7 @@ class OffersController extends Controller
 
                 return redirect('/items/'.$request->input('item_id'))->with('success', 'Offer Made! Click Chat to start your conversation with the seller ^_^');
             } else {
-                return redirect('/items/'.$request->input('item_id'))->with('error', 'You have already made an offer');
+                return redirect('/items/'.$request->input('item_id'))->with('error', 'Please wait for the seller to accept your offer or you can cancel it');
             }
         } else {
             return redirect('/items/'.$request->input('item_id'))->with('error', 'Offer Not Made');
@@ -92,6 +91,60 @@ class OffersController extends Controller
         ];
 
         return view('/offers/show')->with('data', $data);
+    }
+
+    public function cancel($id) {
+        Offer::where('id', $id)
+            ->update(['status' => 'canceled']);
+
+        // send a system generated message
+        $offer = Offer::where('id', $id)->first();
+        $chat_id = ChatsController::find($offer->buyer_id, $offer->seller_id);
+        $info = [
+            'sender_id' => auth()->user()->id,
+            'chat_id' => $chat_id,
+            'item_id' => $offer->item_id,
+            'offer' => $offer,
+        ];
+        MessagesController::auto_send_canceled($info);
+
+        return redirect()->back();
+    }
+
+    public function accept($id) {
+        Offer::where('id', $id)
+            ->update(['status' => 'accepted']);
+
+        // send a system generated message
+        $offer = Offer::where('id', $id)->first();
+        $chat_id = ChatsController::find($offer->buyer_id, $offer->seller_id);
+        $info = [
+            'sender_id' => auth()->user()->id,
+            'chat_id' => $chat_id,
+            'item_id' => $offer->item_id,
+            'offer' => $offer,
+        ];
+        MessagesController::auto_send_accepted($info);
+
+        return redirect()->back();
+    }
+
+    public function decline($id) {
+        Offer::where('id', $id)
+            ->update(['status' => 'declined']);
+
+        // send a system generated message
+        $offer = Offer::where('id', $id)->first();
+        $chat_id = ChatsController::find($offer->buyer_id, $offer->seller_id);
+        $info = [
+            'sender_id' => auth()->user()->id,
+            'chat_id' => $chat_id,
+            'item_id' => $offer->item_id,
+            'offer' => $offer,
+        ];
+        MessagesController::auto_send_declined($info);
+
+        return redirect()->back();
     }
 
 }

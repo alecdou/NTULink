@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="80afb1e5-1714-4755-b6db-51c5441c5316" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chats/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chats/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chats/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chats/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/bottom-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/items/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/items/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/offer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +209,7 @@
       <workItem from="1577909547237" duration="12152000" />
       <workItem from="1577921945152" duration="1632000" />
       <workItem from="1577941034549" duration="82593000" />
-      <workItem from="1578121920603" duration="47381000" />
+      <workItem from="1578121920603" duration="54756000" />
     </task>
     <servers />
   </component>
@@ -235,11 +239,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1577516830535" />
-    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578141368673">
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578230437399">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1112.66.1112.834/0.0.1440.900@0.0.1440.900" timestamp="1577676141346" />
-    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578141368673" />
+    <state x="458" y="213" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578230437399" />
     <state x="363" y="114" key="#phpunit.xml" timestamp="1578081740733">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

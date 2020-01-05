@@ -57,7 +57,7 @@ class ChatsController extends Controller
             ->oldest('time')
             ->get();
 
-        $chat = DB::table('chats')->where('chat_id', $id)->first();
+        $chat = DB::table('chats')->where('id', $id)->first();
         if($user_id == $chat->user1_id) {
             $sender = DB::table('users')->where('id', $chat->user2_id)->first();
         } else {
@@ -84,6 +84,34 @@ class ChatsController extends Controller
 
     }
 
+
+
+    /**
+     * Find the chat id.
+     *
+     * @param  int $user1
+     * @param int $user2
+     * @return int
+     */
+    public static function find($user1, $user2) {
+        $chat = DB::table('chats')
+            ->where([
+                ['user1_id', $user1],
+                ['user2_id', $user2]
+            ])
+            ->orWhere([
+                ['user2_id', $user1],
+                ['user1_id', $user2]
+            ])
+            ->get();
+        if (count($chat) == 0) {
+            return -1;
+        } else {
+            return $chat->first()->id;
+        }
+    }
+
+
     /**
      * Create a chat between two users.
      *
@@ -99,26 +127,18 @@ class ChatsController extends Controller
             return redirect('/items/'.$item_id)->with('error', 'You cannot chat with yourself');
         }
 
-        $current_chat = DB::table('chats')
-            ->where([
-                ['user1_id', $user_id],
-                ['user2_id', $sender_id]
-            ])
-            ->orWhere([
-                ['user2_id', $user_id],
-                ['user1_id', $sender_id]
-            ])
-            ->get();
 
-        if (count($current_chat) == 0) {
+        $current_chat_id =  $this->find($user_id, $sender_id);
+
+        if ($current_chat_id == -1) {
             $chat = new Chat;
             $chat->user1_id = $user_id;
             $chat->user2_id = $sender_id;
             $chat->last_text = 'Start your conversation with '.User::where('id', $sender_id)->first()->name;
             $chat->save();
-            return redirect('/chats/'.$chat->chat_id);
+            return redirect('/chats/'.$chat->id);
         } else {
-            return redirect('/chats/'.$current_chat->first()->chat_id);
+            return redirect('/chats/'.$current_chat_id);
         }
     }
 
@@ -149,9 +169,9 @@ class ChatsController extends Controller
             $chat->user2_id = $sender_id;
             $chat->last_text = 'Start your conversation with ' . User::where('id', $sender_id)->first()->name;
             $chat->save();
-            return $chat->chat_id;
+            return $chat->id;
         } else {
-            return $current_chat->first()->chat_id;
+            return $current_chat->first()->id;
         }
     }
 

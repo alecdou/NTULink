@@ -116,7 +116,7 @@
                         <!-- profile picture -->
                         <img class="container-fluid col-2 pt-2 px-0 mx-0 chat-img" src="noimage.jpg">
                         <!-- user name and message -->
-                        <a class="container-fluid col-10 d-flex pl-2 p-0 m-0" href="/chats/{{ $chat->chat_id }}">
+                        <a class="container-fluid col-10 d-flex pl-2 p-0 m-0" href="/chats/{{ $chat->id }}">
                             <div class="container-fluid p-0 m-0 d-block justify-content-start align-self-center">
                                 <h5 class="container-fluid px-0 pt-2 text-truncate text-monospace font-weight-bold" style="display: block">
                                     @if(auth()->user()->id == $chat->user1_id)

@@ -40,9 +40,10 @@ class MessagesController extends Controller
         $message->save();
 
         // update table chats last_text and last_activity
-        $chat = Chat::where('chat_id', $chat_id)->first();
+        $chat = Chat::where('id', $chat_id)->first();
         $chat->last_text = $text;
-        $chat->last_activity = $message->time;
+        // $chat->last_activity = $message->time;
+        $chat->save();
 
         return redirect('/chats/'.$chat_id);
     }
@@ -60,8 +61,8 @@ class MessagesController extends Controller
         $message->sender_id = auth()->user()->id;
         $item_id = $info['item_id'];
         $item = Item::where('id', $item_id)->first();
-        $text = 'Offered ' .'<b class="text-dark text-monospace">SG'. $info['offer']->offered_price .'</b>'. ' for <b><a class="text-dark text-monospace" href=\"/items/'.$item->id.'\">'.$item->name.'</a></b>';
-        $text = $text . '<br>' . '<a class="text-muted  text-dark" href=\"#\">Check the offer</a>';
+        $text = 'Offered '.'<b class="text-dark text-monospace">SG'.$info['offer']->offered_price.'</b>'.' for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
+        $text = $text . '<br>' . '<a class="text-muted  text-dark" href="/offers/'. $info['offer']->id .'">Check the offer</a>';
         $message->text = $text;
         $message->is_system = true;
         $message->save();
@@ -73,13 +74,72 @@ class MessagesController extends Controller
             $message->sender_id = auth()->user()->id;
             $message->text = $info['offer']->message;
             $message->save();
+            // update table chats last_text and last_activity
+            Chat::where('id', $info['chat_id'])->update(['last_text' => $message->text]);
         }
 
-        // update table chats last_text and last_activity
-        $chat = Chat::where('chat_id', $info['chat_id'])->first();
-        $chat->last_text = $message->text;
-        $chat->last_activity = $message->time;
 
+
+    }
+
+    /**
+     * Send a message to the other user by the system.
+     *
+     * @param  array $info
+     * @return void
+     */
+    public static function auto_send_accepted($info) {
+
+        $message = new Message;
+        $message->chat_id = $info['chat_id'];
+        $message->sender_id = auth()->user()->id;
+        $item_id = $info['item_id'];
+        $item = Item::where('id', $item_id)->first();
+        $text = 'I accepted your offer for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
+        $text = $text . '<br>' . '<a class="text-muted  text-dark" href="/offers/'. $info['offer']->id .'">Check the offer</a>';
+        $message->text = $text;
+        $message->is_system = true;
+        $message->save();
+    }
+
+    /**
+     * Send a message to the other user by the system.
+     *
+     * @param  array $info
+     * @return void
+     */
+    public static function auto_send_declined($info) {
+
+        $message = new Message;
+        $message->chat_id = $info['chat_id'];
+        $message->sender_id = auth()->user()->id;
+        $item_id = $info['item_id'];
+        $item = Item::where('id', $item_id)->first();
+        $text = 'I declined your offer for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
+        $text = $text . '<br>' . '<a class="text-muted  text-dark" href="/offers/'. $info['offer']->id .'">Check the offer</a>';
+        $message->text = $text;
+        $message->is_system = true;
+        $message->save();
+    }
+
+    /**
+     * Send a message to the other user by the system.
+     *
+     * @param  array $info
+     * @return void
+     */
+    public static function auto_send_canceled($info) {
+
+        $message = new Message;
+        $message->chat_id = $info['chat_id'];
+        $message->sender_id = auth()->user()->id;
+        $item_id = $info['item_id'];
+        $item = Item::where('id', $item_id)->first();
+        $text = 'I canceled my offer for <b><a class="text-dark text-monospace" href="/items/'.$item->id.'">'.$item->name.'</a></b>';
+        $text = $text . '<br>' . '<a class="text-muted  text-dark" href="/offers/'. $info['offer']->id .'">Check the offer</a>';
+        $message->text = $text;
+        $message->is_system = true;
+        $message->save();
     }
 
 
