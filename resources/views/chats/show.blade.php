@@ -144,7 +144,7 @@
 
 
         <!-- Message Box -->
-        <div class="container-fluid col-12 col-md-8 message-box border-0">
+        <div id="box" class="container-fluid col-12 col-md-8 message-box border-0">
 
             <!-- Input Box -->
             <div class="navbar navbar-expand chat-input-box bg-light col-12 col-md-8">
@@ -183,7 +183,7 @@
             <!-- /Title -->
 
 
-            <div class="container-fluid row px-0 mx-0 col-12">
+            <div id="here" class="container-fluid row px-0 mx-0 col-12">
                 @if(count($chats['messages']) > 0)
                     @foreach($chats['messages'] as $message)
 
@@ -235,6 +235,16 @@
 
     </div>
 
+    <script>
+        window.onload=function () {
+            var objDiv = document.getElementById("box");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }
+
+
+
+    </script>
 
 
 @endsection
+

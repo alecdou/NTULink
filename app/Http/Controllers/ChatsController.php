@@ -18,7 +18,9 @@ class ChatsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
     }
+
 
     /**
      * Display a chat history.

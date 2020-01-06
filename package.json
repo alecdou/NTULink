@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
+        "laravel-echo": "^1.6.1",
+        "pusher-js": "^5.0.3",
         "swiper": "^5.2.1"
     }
 }

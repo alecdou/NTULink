@@ -52,7 +52,7 @@
     </style>
 
 </head>
-<body>
+<body id="LALA">
     @include('inc.header')
     @include('inc.messages')
 
@@ -68,4 +68,8 @@
 </body>
 
 </html>
+
+<script>
+
+</script>
 

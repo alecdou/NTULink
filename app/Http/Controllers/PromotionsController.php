@@ -17,7 +17,9 @@ class PromotionsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['']]);
+        $this->middleware(['auth' => 'verified']);
+
+
     }
 
     /**

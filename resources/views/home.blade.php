@@ -111,21 +111,39 @@
 
     <!-- Product Promotion List 1 -->
     <div id="promotion-list" class="container-fluid my-3 pb-3">
-        <h1 class="d-flex justify-content-center pt-3">Trending</h1>
+        <h1 class="d-flex justify-content-center py-3">Trending</h1>
         <div class="container-fluid swiper-container swiper-container-promotion">
             <div class="swiper-wrapper">
-
                 @foreach($data['promotions'] as $promotion)
                     <div class="swiper-slide promotion-slider">
-                        <div id="promotion-card" class="card border-0">
-                            <a href="/items/{{ $promotion->id }}">
-                                <img src="/{{ App\Image::where('item_id', $promotion->id)->first()->image_path }}" alt="Item Image" class="container-fluid">
+                        <div class="card product-card border-0 justify-content-center">
+                            <a href="/items/{{ $promotion->id }}" class="d-flex justify-content-center my-0 pb-0">
+                                <img src="/{{ App\Image::where('item_id', $promotion->id)->first()->image_path }}" alt="Item Image" class="product-img">
                             </a>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $promotion->name }}</h5>
-                                <h5 class="card-title">{{ $promotion->price }}</h5>
-                                <hr>
-                                <small class="card-text">{{ $promotion->description }}</small>
+                            <div class="card-body justify-content-center mt-1 pt-1">
+                                <h5 id="item-name" class="card-title text-truncate mb-0" style="display: block">
+                                    {{ $promotion->name }}
+                                </h5>
+                                <p class="card-text text-truncate mt-0 text-muted" style="display: block">{{ $promotion->description }}</p>
+                                <h5 class="text-muted pb-0 mb-0">
+                                    @if($promotion->is_new)
+                                        New
+                                    @else
+                                        Used
+                                    @endif
+                                </h5>
+                                <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0 align-items-center">
+                                    <h5 id="item-price" class="card-title d-flex justify-content-start mb-0">
+                                        <b>S${{ $promotion->price }}</b>
+                                    </h5>
+
+                                    <div class="d-flex align-items-center pl-0 ml-0">
+                                        <i class="far fa-heart fa-2x py-1"></i>
+                                        {{ count(\App\Like::where('item_id', $promotion->id)->get()) }}
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -140,7 +158,7 @@
 
     <!-- Item Cards -->
     <div class="container-fluid my-3 mx-0 px-0 bg-white">
-        <h1 class="d-flex justify-content-center pt-3">Products</h1>
+        <h1 class="d-flex justify-content-center py-3">Products</h1>
         <div class="container-fluid px-0 row mx-1">
             @foreach($data['items'] as $item)
                 <div class="container col-6 col-xl-2 col-md-3 col-sm-4 mb-3 px-1 m-0">
@@ -153,11 +171,22 @@
                                 {{ $item->name }}
                             </h5>
                             <p class="card-text text-truncate mt-0 text-muted" style="display: block">{{ $item->description }}</p>
-                            <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0">
+                            <h5 class="text-muted pb-0 mb-0">
+                                @if($item->is_new)
+                                    New
+                                @else
+                                    Used
+                                @endif
+                            </h5>
+                            <div class="container row justify-content-between mx-0 px-0 pb-0 mb-0 align-items-center">
                                 <h5 id="item-price" class="card-title d-flex justify-content-start mb-0">
                                     <b>S${{ $item->price }}</b>
                                 </h5>
-                                <h5 class="text-muted pb-0 mb-0">Used</h5>
+
+                                <div class="d-flex align-items-center pl-0 ml-0">
+                                    <i class="far fa-heart fa-2x py-1"></i>
+                                    {{ count(\App\Like::where('item_id', $item->id)->get()) }}
+                                </div>
                             </div>
 
 

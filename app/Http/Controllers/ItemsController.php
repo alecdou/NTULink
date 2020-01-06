@@ -25,8 +25,9 @@ class ItemsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['home', 'list', 'show', 'search']]);
+        $this->middleware(['auth' => 'verified'], ['except' => ['home', 'list', 'show', 'search']]);
     }
+
 
     /**
      * Display a listing of the resource.

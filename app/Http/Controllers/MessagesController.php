@@ -17,7 +17,9 @@ class MessagesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth' => 'verified']);
+
+
     }
 
     /**
@@ -44,7 +46,7 @@ class MessagesController extends Controller
         $chat->last_text = $text;
         $chat->save();
 
-        return redirect('/chats/'.$chat_id);
+        return back();
     }
 
     /**

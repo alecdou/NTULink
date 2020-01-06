@@ -15,7 +15,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 
 //Route::get('/', 'ItemsController@index');
